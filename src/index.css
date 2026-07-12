@@ -1,0 +1,44 @@
+@import "tailwindcss";
+
+@theme {
+  --color-gold: #C9A84C;
+  --color-gold-light: #E8C97A;
+  --color-gold-dim: #8A6E2F;
+  --color-dark: #0D0E12;
+  --color-dark2: #14161C;
+  --color-dark3: #1C1F28;
+  --color-dark4: #252833;
+  --color-muted: #6B7180;
+  --color-text: #E8E9EC;
+  --color-text-dim: #9CA3AF;
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-dark);
+  color: var(--color-text);
+}
+.hero-grid{
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(201,168,76,0.04) 1px , transparent 1px),
+                    linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+  background-size: 64px 64px;
+  mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 0%, transparent 100%);
+  pointer-events: none;
+}
+.hero-glow {
+  position: absolute;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(201,168,76,0.08) 0%, transparent 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  pointer-events: none;
+}
+
+html{
+  scroll-behavior: smooth;
+}
