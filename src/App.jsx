@@ -7,6 +7,7 @@ import Stats from "./components/Stats";
 import Testimonial from "./components/Testimonial";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
+import ContactSection from "./components/ContactSection";
 function App() {
   return (
     <div>
@@ -18,6 +19,7 @@ function App() {
       <Stats/>
       <Testimonial/>
       <CTASection/>
+      <ContactSection/>
       <Footer/>
     </div>
   );
