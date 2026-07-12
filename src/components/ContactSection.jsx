@@ -20,7 +20,7 @@ function ContactSection(){
                 <p className="text-text-dim mb-10">Have a question or need help with a filing?
                      Send us a message and we'll get bact to you within 24 hours.</p>
 
-                <form onClick={handleSubmit} className="flex flex-col gap-6 text-left">
+                <form onSubmit={handleSubmit} className="flex flex-col gap-6 text-left">
                     <div>
                         <label className="block text-sm text-text-dim mb-2">Name</label>
                         <input className="w-full bg-dark3 border border-white/10 rounded
