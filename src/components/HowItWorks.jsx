@@ -5,7 +5,7 @@ function HowItWorks(){
                     {number:"04", title: "Submit & stay compliant", description: "We file directly with the relevant authority and send reminders before each deadline."}
     ]
     return(
-        <section id="how" className="bg-dark py-[4rem] px-[1.5rem] border-t border-white/5 border-b border-white/5 md:py-24 md:px-16">
+        <section id="how" className=" scroll-mt-7 bg-dark py-[4rem] px-[1.5rem] border-t border-white/5 border-b border-white/5 md:py-24 md:px-16">
             <div className="text-gold text-xs tracking-[0.14em] mb-4">
                 PROCESS
             </div>

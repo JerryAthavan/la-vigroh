@@ -3,20 +3,25 @@ function ContactSection(){
     const[name, setName] = useState("");
     const[email, setEmail] = useState("");
     const[message, setMessage] = useState("");
-
     const emailRef = useRef(null);
     const messageRef = useRef(null);
+    const [status, setStatus] = useState("idle");
+    const [honeypot, setHoneypot] = useState("");
     const handleSubmit = (e) => {
         e.preventDefault();
+        if(honeypot){
+            console.log("Bot detected, submission blocked");
+            return;
+        }
         console.log("Form submitted:", {name, email, message});
-        alert(`Thanks ${name}, we'll get back to you soon!`);
+        setStatus("success");
         setName("");
         setEmail("");
         setMessage("");
     };
     return(
         <section id="contact"
-        className="bg-dark2 py-16 px-6 md:py-24 md:px-16 border-t border-white/5">
+        className=" scroll-mt-7 bg-dark2 py-16 px-6 md:py-24 md:px-16 border-t border-white/5">
             <div className="max-w-xl mx-auto text-center">
                 <div className="text-gold text-sm tracking-widest mb-4">Contact</div>
                 <h2 className="text-text text-4xl font-serif font-semibold mb-4">Get in touch</h2>
@@ -37,6 +42,10 @@ function ContactSection(){
                                 emailRef.current.focus();
                             }
                          }}/>
+                         <input type="text" value={honeypot} onChange={(e)=>setHoneypot(e.target.value)}
+                         className="absolute -left-[9999px]"
+                         tabIndex="-1"
+                         autoComplete="off" />
                     </div>
                     <div>
                         <label className="block text-sm text-text-dim mb-2">Email</label>
@@ -63,6 +72,9 @@ function ContactSection(){
                     hover:bg-gold-light transition-colors"
                     >Send Message</button>
                 </form>
+                {status === "success" && (
+                    <p className="text-gold text-sm mt-6">Thanks! We'll get back to you within 24 hours</p>
+                )}
             </div>
         </section>
 

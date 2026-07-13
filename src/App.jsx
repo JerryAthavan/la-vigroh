@@ -8,18 +8,19 @@ import Testimonial from "./components/Testimonial";
 import CTASection from "./components/CTASection";
 import Footer from "./components/Footer";
 import ContactSection from "./components/ContactSection";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import AboutUs from "./pages/AboutUs";
+import ScrollToHash from "./components/ScrollToHash";
 function App() {
   return (
     <div>
+      <ScrollToHash/>
       <Navbar/>
-      <Hero/>
-      <LogosBar/>
-      <Products/>
-      <HowItWorks/>
-      <Stats/>
-      <Testimonial/>
-      <CTASection/>
-      <ContactSection/>
+      <Routes>
+        <Route path="/" element={<HomePage/>}/>
+        <Route path="/about" element={<AboutUs/>}/>
+      </Routes>
       <Footer/>
     </div>
   );
