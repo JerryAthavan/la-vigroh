@@ -9,7 +9,7 @@ function Footer(){
                     <a href="#" className="text-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Resources</a>
                     <a href="#" className="text-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Privacy Policy</a>
                     <a href="#" className="text-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Terms of Service</a>
-                    <a href="#" className="text-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Contact</a>
+                    <a href="#contact" className="text-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Contact</a>
                 </div>
             </div>
             <p className="text-xs text-muted mt-6 text-center">© 2025 La Vigroh. All rights reserved. La Vigroh is not a law firm or CPA firm. Tax advice is provided by licensed professionals through the platform.</p>

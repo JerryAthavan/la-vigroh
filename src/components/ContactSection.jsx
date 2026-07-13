@@ -1,8 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 function ContactSection(){
     const[name, setName] = useState("");
     const[email, setEmail] = useState("");
     const[message, setMessage] = useState("");
+
+    const emailRef = useRef(null);
+    const messageRef = useRef(null);
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log("Form submitted:", {name, email, message});
@@ -25,20 +28,35 @@ function ContactSection(){
                         <label className="block text-sm text-text-dim mb-2">Name</label>
                         <input className="w-full bg-dark3 border border-white/10 rounded
                         px-4 py-3 text-text placeholder:text-text-dim/50 
-                        focus:outline-none focus:border-gold" 
-                        type="text" value={name} placeholder="your name" onChange={(e)=> setName(e.target.value)} />
+                        focus:outline-none focus:border-gold " 
+                        type="text" required value={name} placeholder="your name"
+                         onChange={(e)=> setName(e.target.value)} 
+                         onKeyDown={(e)=>{
+                            if(e.key === "Enter"){
+                                e.preventDefault();
+                                emailRef.current.focus();
+                            }
+                         }}/>
                     </div>
                     <div>
                         <label className="block text-sm text-text-dim mb-2">Email</label>
                         <input className="w-full bg-dark3 border border-white/10 
                         rounded px-4 py-3 text-text placeholder:text-text-dim/50 focus:outline-none focus:border-gold"
-                        type="email" value={email} onChange={(e)=> setEmail(e.target.value)} placeholder="you@example.com" />
+                        type="email" required value={email} onChange={(e)=> setEmail(e.target.value)} 
+                        placeholder="you@example.com" ref={emailRef}
+                        onKeyDown={(e)=> {
+                            if(e.key ==="Enter"){
+                                e.preventDefault();
+                                messageRef.current.focus();
+                            }
+                        }}  />
                     </div>
                     <div>
                         <label className="block text-sm text-text-dim mb-2">Message</label>
                         <textarea className="w-full bg-dark3 border border-white/10 rounded
                         px-4 py-3 text-text placeholder:text-text-dim/50 focus:outline-none focus:border-gold resize-none"
-                         rows="5" value={message} onChange={(e)=> setMessage(e.target.value)} placeholder="How can we help?"></textarea>
+                         rows="5" required value={message} onChange={(e)=> setMessage(e.target.value)}
+                          placeholder="How can we help?" ref={messageRef}></textarea>
                     </div>
                     <button type="submit"
                     className="bg-gold text-dark py-3.5 rounded no-underline font-medium
