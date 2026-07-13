@@ -1,4 +1,5 @@
 @import "tailwindcss";
+@custom-variant light (&:where(.light, .light *));
 
 @theme {
   --color-gold: #C9A84C;
@@ -11,6 +12,15 @@
   --color-muted: #6B7180;
   --color-text: #E8E9EC;
   --color-text-dim: #9CA3AF;
+
+   /* Light theme equivalents */
+  --color-light: #FFFFFF;
+  --color-light2: #F5F4F0;
+  --color-light3: #EFEDE7;
+  --color-light4: #E5E2DA;
+  --color-light-text: #14161C;
+  --color-light-text-dim: #5B6070;
+  --color-light-muted: #8A8F9C;
 }
 
 body {

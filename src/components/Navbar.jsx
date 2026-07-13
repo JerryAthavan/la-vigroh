@@ -1,7 +1,9 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import useTheme from "../hooks/useTheme";
 function Navbar(){
     const[isOpen, setIsOpen] = useState(false);
+    const [isLight, setIsLight] = useTheme();
     return(
         <>
         <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-5 px-16 bg-dark/85 backdrop-blur-md border-b border-white/5">
@@ -14,7 +16,23 @@ function Navbar(){
             </ul>
             <Link to="/#contact" className="hidden md:block bg-gold text-dark py-2 px-6 rounded text-sm font-medium no-underline hover:bg-gold-light transition-colors">Get Started</Link>
             <button className="md:hidden text-text text-2xl" aria-label="Toggle menu" onClick={()=> setIsOpen(!isOpen)}>{isOpen ? "✕":"☰"}</button>
-
+            <button onClick={()=> setIsLight(!isLight)}
+                className="relative w-14 h-7 rounded-full bg-dark3 border border-white/10 flex items-center px-1 transition-colors" 
+                aria-label="Toggle theme">
+                <svg className="absolute left-1.5 w-4 h-4 text-gold"
+                fill="currentColor" viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="5"/>
+                    <path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+                </svg>
+                <svg className="absolute right-1.5 w-4 h-4 text-gold" 
+                fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" />
+                </svg>
+                {/* <span className="absolute left-1.5 text-xs">☀️</span>
+                <span className="absolute right-1.5 text-xs">🌙</span> */}
+                <span className={`relative w-5 h-5 rounded-full bg-gold transition-transform duration-300
+                     ${isLight? "translate-x-7": "translate-x-0"}`}></span>
+            </button>
             
         </nav>
         {isOpen && (
