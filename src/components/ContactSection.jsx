@@ -21,18 +21,18 @@ function ContactSection(){
     };
     return(
         <section id="contact"
-        className=" scroll-mt-7 bg-dark2 py-16 px-6 md:py-24 md:px-16 border-t border-white/5">
+        className=" scroll-mt-7 bg-dark2 light:bg-light2 py-16 px-6 md:py-24 md:px-16 border-t border-white/5 light:border-black/10">
             <div className="max-w-xl mx-auto text-center">
                 <div className="text-gold text-sm tracking-widest mb-4">Contact</div>
-                <h2 className="text-text text-4xl font-serif font-semibold mb-4">Get in touch</h2>
-                <p className="text-text-dim mb-10">Have a question or need help with a filing?
+                <h2 className="text-text light:text-light-text text-4xl font-serif font-semibold mb-4">Get in touch</h2>
+                <p className="text-text-dim light:text-light-text-dim mb-10">Have a question or need help with a filing?
                      Send us a message and we'll get bact to you within 24 hours.</p>
 
                 <form onSubmit={handleSubmit} className="flex flex-col gap-6 text-left">
                     <div>
-                        <label className="block text-sm text-text-dim mb-2">Name</label>
-                        <input className="w-full bg-dark3 border border-white/10 rounded
-                        px-4 py-3 text-text placeholder:text-text-dim/50 
+                        <label className="block text-sm text-text-dim light:text-light-text-dim mb-2">Name</label>
+                        <input className="w-full bg-dark3 light:bg-light3 border border-white/10 light:border-black/15 rounded
+                        px-4 py-3 text-text light:text-light-text placeholder:text-text-dim/50 light:placeholder:text-light-text-dim/70 
                         focus:outline-none focus:border-gold " 
                         type="text" required value={name} placeholder="your name"
                          onChange={(e)=> setName(e.target.value)} 
@@ -48,9 +48,9 @@ function ContactSection(){
                          autoComplete="off" />
                     </div>
                     <div>
-                        <label className="block text-sm text-text-dim mb-2">Email</label>
-                        <input className="w-full bg-dark3 border border-white/10 
-                        rounded px-4 py-3 text-text placeholder:text-text-dim/50 focus:outline-none focus:border-gold"
+                        <label className="block text-sm text-text-dim light:text-light-text-dim mb-2">Email</label>
+                        <input className="w-full bg-dark3 light:bg-light3 border border-white/10 light:border-black/15
+                        rounded px-4 py-3 text-text light:text-light-text placeholder:text-text-dim/50 light:placeholder:text-light-text-dim/70 focus:outline-none focus:border-gold"
                         type="email" required value={email} onChange={(e)=> setEmail(e.target.value)} 
                         placeholder="you@example.com" ref={emailRef}
                         onKeyDown={(e)=> {
@@ -61,9 +61,9 @@ function ContactSection(){
                         }}  />
                     </div>
                     <div>
-                        <label className="block text-sm text-text-dim mb-2">Message</label>
-                        <textarea className="w-full bg-dark3 border border-white/10 rounded
-                        px-4 py-3 text-text placeholder:text-text-dim/50 focus:outline-none focus:border-gold resize-none"
+                        <label className="block text-sm text-text-dim light:text-light-text-dim mb-2">Message</label>
+                        <textarea className="w-full bg-dark3 light:bg-light3 border border-white/10 light:border-black/15 rounded
+                        px-4 py-3 text-text light:text-light-text placeholder:text-text-dim/50 light:placeholder:text-light-text-dim/70 focus:outline-none focus:border-gold resize-none"
                          rows="5" required value={message} onChange={(e)=> setMessage(e.target.value)}
                           placeholder="How can we help?" ref={messageRef}></textarea>
                     </div>
