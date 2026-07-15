@@ -1,4 +1,5 @@
 import { useState, useRef } from "react";
+import emailjs from '@emailjs/browser'
 function ContactSection(){
     const[name, setName] = useState("");
     const[email, setEmail] = useState("");
@@ -13,11 +14,23 @@ function ContactSection(){
             console.log("Bot detected, submission blocked");
             return;
         }
-        console.log("Form submitted:", {name, email, message});
-        setStatus("success");
-        setName("");
-        setEmail("");
-        setMessage("");
+        emailjs.send(
+            "service_vp94qe8",
+            "template_gdphxb9",
+            {name: name, email: email, message: message},
+            "tA-pl39Dyi2Ob2q5A"
+        )
+        .then(()=>{
+            setStatus("success");
+            setName("");
+            setEmail("");
+            setMessage("");
+        })
+        .catch((error)=>{
+            console.log("Email send failed:", error);
+            setStatus("error");
+        });
+        
     };
     return(
         <section id="contact"
@@ -74,6 +87,9 @@ function ContactSection(){
                 </form>
                 {status === "success" && (
                     <p className="text-gold text-sm mt-6">Thanks! We'll get back to you within 24 hours</p>
+                )}
+                {status === "error" && (
+                    <p>Something went wrong. Please try again or email us directly.</p>
                 )}
             </div>
         </section>
