@@ -1,13 +1,19 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import useTheme from "../hooks/useTheme";
+import logodark from "../assets/logo-dark-themed.png"
+import logoLight from "../assets/logo-light-themed.png"
 function Navbar(){
     const[isOpen, setIsOpen] = useState(false);
     const [isLight, setIsLight] = useTheme();
     return(
         <>
         <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-5 px-16 bg-dark/85 light:bg-light/85 backdrop-blur-md border-b border-white/5 light:border-black/10">
-            <Link to="/" className="font-serif text-2xl font-bold text-gold tracking-[0.02em]">La <span className="text-text light:text-light-text font-normal">Vigroh</span></Link>
+            
+            <Link to="/" className="flex items-center gap-2 font-serif text-2xl font-bold text-gold tracking-[0.02em]">
+            <img src={logodark} alt="La Vigroh Logo" className="w-9 h-9 light:hidden" />
+            <img src={logoLight} alt="La Vigroh Logo" className="w-9 h-9 hidden light:block"/>
+            La <span className="text-text light:text-light-text font-normal">Vigroh</span></Link>
             <ul className="hidden md:flex gap-10 list-none">
                 <li><Link to="/#products" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">Products</Link></li>
                 <li><Link to="/#how" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">How it works</Link></li>
