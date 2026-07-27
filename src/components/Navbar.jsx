@@ -8,7 +8,7 @@ function Navbar(){
     const [isLight, setIsLight] = useTheme();
     return(
         <>
-        <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-5 px-16 bg-dark/85 light:bg-light/85 backdrop-blur-md border-b border-white/5 light:border-black/10">
+        <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-4 px-4 md:py-5 md:px-16 bg-dark/85 light:bg-light/85 backdrop-blur-md border-b border-white/5 light:border-black/10">
             
             <Link to="/" className="flex items-center gap-2 font-serif text-2xl font-bold text-gold tracking-[0.02em]">
             <img src={logodark} alt="La Vigroh Logo" className="w-9 h-9 light:hidden" />
