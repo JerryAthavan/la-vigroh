@@ -14,7 +14,7 @@ function ProductCard({tag, icon, title, description, linkText}){
             <p className="text-[0.9rem] text-text-dim light:text-light-text-dim leading-[1.65] mb-6">
                 {description}
             </p>
-            <a href="#contact" className="text-[0.8rem] tracking-[0.06rem] text-gold no-underline hover:text-gold-light transition-colors">
+            <a href="https://ufilefbar.com/" className="text-[0.8rem] tracking-[0.06rem] text-gold no-underline hover:text-gold-light transition-colors">
                 {linkText}
             </a>
         </div>
