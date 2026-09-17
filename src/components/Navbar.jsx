@@ -8,20 +8,25 @@ function Navbar(){
     const [isLight, setIsLight] = useTheme();
     return(
         <>
-        <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-4 px-4 md:py-5 md:px-16 bg-dark/85 light:bg-light/85 backdrop-blur-md border-b border-white/5 light:border-black/10">
-            
-            <Link to="/" className="flex items-center gap-2 font-serif text-2xl font-bold text-gold tracking-[0.02em]">
+        <nav className="fixed top-0 left-0 right-0 z-100 flex items-center justify-between py-4 px-4 md:py-5 md:px-8 lg:px-16 bg-dark/85 light:bg-light/85 backdrop-blur-md border-b border-white/5 light:border-black/10">
+            <div className="flex items-center gap-3">
+            <button className="lg:hidden text-text light:text-light-text text-2xl" aria-label="Toggle menu" onClick={() => setIsOpen(!isOpen)}>{isOpen ? "✕" : "☰"}</button>
+
+            <Link to="/" className="flex items-center gap-1.5 md:gap-2 font-serif text-lg md:text-2xl font-bold text-gold tracking-[0.02em] no-underline">
             <img src={logodark} alt="La Vigroh Logo" className="w-9 h-9 light:hidden" />
             <img src={logoLight} alt="La Vigroh Logo" className="w-9 h-9 hidden light:block"/>
             La <span className="text-text light:text-light-text font-normal">Vigroh</span></Link>
-            <ul className="hidden md:flex gap-10 list-none">
+            </div>
+            <ul className="hidden lg:flex gap-8 xl:gap-10 list-none">
                 <li><Link to="/#products" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">Products</Link></li>
                 <li><Link to="/#how" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">How it works</Link></li>
                 <li><Link to="/#contact" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">Contact</Link></li>
                 <li><Link to="/about" className="text-text-dim light:text-light-text-dim text-sm no-underline tracking-[0.04em] hover:text-gold transition-colors">About</Link></li>
             </ul>
-            <Link to="/#contact" className="hidden md:block bg-gold text-dark py-2 px-6 rounded text-sm font-medium no-underline hover:bg-gold-light transition-colors">Get Started</Link>
-            <button className="md:hidden text-text light:text-light-text text-2xl" aria-label="Toggle menu" onClick={()=> setIsOpen(!isOpen)}>{isOpen ? "✕":"☰"}</button>
+
+
+            <div className="flex items-center gap-4">
+            <Link to="/#contact" className="hidden lg:block bg-gold text-dark py-2 px-6 rounded text-sm font-medium no-underline hover:bg-gold-light transition-colors">Get Started</Link>
             <button onClick={()=> setIsLight(!isLight)}
                 className="relative w-14 h-7 rounded-full bg-dark3 light:bg-light3 border border-white/10 light:border-black/10 flex items-center px-1 transition-colors" 
                 aria-label="Toggle theme">
@@ -39,10 +44,11 @@ function Navbar(){
                 <span className={`relative w-5 h-5 rounded-full bg-gold transition-transform duration-300
                      ${isLight? "translate-x-7": "translate-x-0"}`}></span>
             </button>
+            </div>
             
         </nav>
         {isOpen && (
-                <div className="fixed top-[72px] z-40 left-0 right-0 bg-dark/85 light:bg-light/85 backdrop-blur-md flex flex-col items-center gap-6 py-5 px-8 md:hidden border-b border-white/5 light:border-black/10 ">
+                <div className="fixed top-[72px] z-40 left-0 right-0 bg-dark/85 light:bg-light/85 backdrop-blur-md flex flex-col items-center gap-6 py-5 px-8 lg:hidden border-b border-white/5 light:border-black/10 ">
                     <Link to="/#products" onClick={() => setIsOpen(false)} className="text-text-dim light:text-light-text-dim text-sm no-underline hover:text-gold">Products</Link>
                     <Link to="/#how" onClick={() => setIsOpen(false)} className="text-text-dim light:text-light-text-dim text-sm no-underline hover:text-gold">How it works</Link>
                     <Link to="/#contact" onClick={() => setIsOpen(false)} className="text-text-dim light:text-light-text-dim text-sm no-underline hover:text-gold">Contact</Link>
