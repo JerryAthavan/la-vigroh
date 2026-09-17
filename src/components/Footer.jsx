@@ -14,7 +14,7 @@ function Footer(){
                     <Link to="/#contact" className="text-muted light:text-light-muted text-[0.8rem] no-underline tracking-wide hover:text-gold transition-colors">Contact</Link>
                 </div>
             </div>
-            <p className="text-xs text-muted light:text-light-muted mt-6 text-center">© 2025 La Vigroh. All rights reserved. La Vigroh is not a law firm or CPA firm. Tax advice is provided by licensed professionals through the platform.</p>
+            <p className="text-xs text-muted light:text-light-muted mt-6 text-center">© 2026 La Vigroh. All rights reserved. La Vigroh is not a law firm or CPA firm. Tax advice is provided by licensed professionals through the platform.</p>
         </footer>
     );
 

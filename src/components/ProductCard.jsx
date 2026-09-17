@@ -1,4 +1,6 @@
-function ProductCard({tag, icon, title, description, linkText}){
+function ProductCard({tag, icon, title, description, linkText, link}){
+    const isExternal = link.startsWith("http");
+
     return(
         <>
         <div className="bg-dark3 light:bg-light3 p-10 text-left hover:bg-dark4 light:hover:bg-light4 transition-colors">
@@ -14,7 +16,10 @@ function ProductCard({tag, icon, title, description, linkText}){
             <p className="text-[0.9rem] text-text-dim light:text-light-text-dim leading-[1.65] mb-6">
                 {description}
             </p>
-            <a href="https://ufilefbar.com/" className="text-[0.8rem] tracking-[0.06rem] text-gold no-underline hover:text-gold-light transition-colors">
+            <a href={link} 
+            target={isExternal ? "_blank":undefined}
+            rel={isExternal ? "noopener noreferrer" : undefined}
+            className="text-[0.8rem] tracking-[0.06rem] text-gold no-underline hover:text-gold-light transition-colors">
                 {linkText}
             </a>
         </div>

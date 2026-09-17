@@ -1,9 +1,10 @@
 import ProductCard from "./ProductCard";
 const products = [
-  { tag: "LIVE", icon: "🇺🇸", title: "UFile FBAR", description: "File FinCEN Form 114 (FBAR) in minutes. Designed for US taxpayers with foreign financial accounts — accurate, secure, and starting at $12/year.", linkText: "Get started →" },
-  { tag: "COMING SOON", icon: "🇮🇳", title: "India ITR Filing", description: "Seamless Income Tax Return filing for NRIs and Indian residents with foreign income — with intelligent auto-import and DTAA optimization.", linkText: "Join waitlist →" },
-  { tag: "COMING SOON", icon: "🌍", title: "VAT & GST Manager", description: "Track, calculate, and file VAT and GST obligations across the EU, UK, Australia, and India from a single dashboard.", linkText: "Join waitlist →" },
-  { tag: "COMING SOON", icon: "💼", title: "CPA Connect", description: "Get matched with a licensed CPA or EA for expert review of your filings — fully integrated into the La Vigroh workflow.", linkText: "Join waitlist →" }
+  { tag: "LIVE", icon: "🇺🇸", title: "UFile FBAR", description: "File FinCEN Form 114 (FBAR) in minutes. Designed for US taxpayers with foreign financial accounts — accurate, secure, and starting at $12/year.", linkText: "Get started →", link:"https://ufilefbar.com" },
+  { tag: "LIVE", icon: "💼", title: "CPA Connect", description: "Get matched with a licensed CPA or EA for expert review of your filings — fully integrated into the La Vigroh workflow.", linkText: "Get started →", link:"https://ufilefbar.com/cpa" },
+  { tag: "COMING SOON", icon: "🇮🇳", title: "India ITR Filing", description: "Seamless Income Tax Return filing for NRIs and Indian residents with foreign income — with intelligent auto-import and DTAA optimization.", linkText: "Join waitlist →", link:"#contact" },
+  { tag: "COMING SOON", icon: "🌍", title: "VAT & GST Manager", description: "Track, calculate, and file VAT and GST obligations across the EU, UK, Australia, and India from a single dashboard.", linkText: "Join waitlist →", link:"#contact" }
+  
 ];
 function Products(){
     return(
@@ -20,6 +21,7 @@ function Products(){
                     title={product.title}
                     description={product.description}
                     linkText={product.linkText}
+                    link={product.link}
                     />
                 ))}
             </div>
