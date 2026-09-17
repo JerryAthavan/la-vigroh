@@ -34,7 +34,7 @@ function ContactSection(){
     };
     return(
         <section id="contact"
-        className=" scroll-mt-7 bg-dark2 light:bg-light2 py-16 px-6 md:py-24 md:px-16 border-t border-white/5 light:border-black/10">
+        className=" scroll-mt-7 bg-dark2 light:bg-light2 py-10 px-6 md:py-24 md:px-16 border-t border-white/5 light:border-black/10">
             <div className="max-w-xl mx-auto text-center">
                 <div className="text-gold text-sm tracking-widest mb-4">Contact</div>
                 <h2 className="text-text light:text-light-text text-4xl font-serif font-semibold mb-4">Get in touch</h2>

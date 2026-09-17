@@ -5,7 +5,7 @@ function Stats(){
                     {num:"24h", label: "Average filing time"}
     ]
     return(
-        <section className="bg-dark light:bg-light border-t border-white/5 light:border-black/10 py-16 px-6 md:py-24 md:px-16">
+        <section className="bg-dark light:bg-light border-t border-white/5 light:border-black/10 py-10 px-6 md:py-24 md:px-16">
             <div className="grid grid-cols-[repeat(auto-fit,minmax(180px,1fr))] text-center gap-12">
                 {stats.map((stat, index)=>(
                 <div key={index} >

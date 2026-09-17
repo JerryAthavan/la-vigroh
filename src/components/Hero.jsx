@@ -1,6 +1,6 @@
 function Hero(){
     return(
-        <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center pt-32 pr-8 pb-16 pl-8 bg-dark light:bg-light">
+        <section className="relative overflow-hidden min-h-screen flex flex-col items-center justify-center text-center md:pt-0 md:pb-0 pt-32 pr-8 pb-10 pl-8 bg-dark light:bg-light">
             <div className="hero-grid"></div>
             <div className="hero-glow"></div>
             <div className="inline-flex items-center gap-2 bg-gold/10 border border-gold/20 text-gold text-sm px-4 py-1.5 rounded-full mb-8">
